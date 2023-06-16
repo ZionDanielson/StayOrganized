@@ -1,9 +1,21 @@
  /* CSS styles for centering the navigation bar */
- .topnav {
+ header {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
+
   }
+
+
+  .topnav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+ 
+
+  
+
 
   /* CSS styles for centering the hero text, image, and buttons */
   hero {
