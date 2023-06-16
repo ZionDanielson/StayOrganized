@@ -1,20 +1,4 @@
- /* CSS styles for centering the navigation bar */
- header {
-    display: flex;
-    justify-content: space-between;
 
-  }
-
-
-  .topnav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
- 
-
-  
 
 
   /* CSS styles for centering the hero text, image, and buttons */
