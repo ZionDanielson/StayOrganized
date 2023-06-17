@@ -3,48 +3,87 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>New Todo</title>
+    <title>New Tasks</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+      .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60vh;
+      }
+      .form-container {
+        max-width: 400px;
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: whitesmoke;
+      }
+    </style>
   </head>
+
   <body>
-    <h1>Todo 🚩</h1>
-    
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="ToDoBox">To Do:</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="ToDoInputBox">
-        <span class="input-group-text" id="Deadline">Deadline:</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="DeadLineInputBox">
-      </div>
-
-
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Username:</span>
-          <select class="form-select" aria-label="Username" aria-describedby="inputGroup-sizing-default">
-            <option selected>Select a Username:</option>
-          </select>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">🌟</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./todos.html">Tasks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./new_todo.html">New Tasks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./new_user.html">Register</a>
+            </li>
+          </ul>
         </div>
+    </nav>
 
-
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Categories:</span>
-            <select class="form-select" aria-label="Categories" aria-describedby="inputGroup-sizing-default">
-              <option selected>Select a Category:</option>
-          </select>
-        </div>
-
-
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Urgency:</span>
-            <select class="form-select" aria-label="Urgency" aria-describedby="inputGroup-sizing-default">
-              <option selected>Select Urgency classification:</option>
-          </select>
-        </div>
-
-
+    <div class="main">
+      <div class="form-container">
+        <h1 class="text-center">ToDo 🚩</h1>
 
         
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="ToDoBox">ToDo:</span>
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="ToDoInputBox">
+          <span class="input-group-text" id="Deadline">Deadline:</span>
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="DeadLineInputBox">
+        </div>
+  
+        <div class="input-group mb-3">
+          <span class="input-group-text">Users:</span>
+          <select class="form-select" id="userDropdown" aria-label="users" aria-describedby="inputGroup-sizing-default">
+            <option selected>Select username:</option>
+          </select>
+        </div>
 
-    <button type="button" class="btn btn-primary">ADD</button>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Categories:</span>
+          <select class="form-select" id="categoryDropdown" aria-label="users" aria-describedby="inputGroup-sizing-default">
+            <option selected>Select category:</option>
+          </select>
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="priorityDropdown">Priority:</span>
+            <select class="form-select" aria-label="priority" aria-describedby="inputGroup-sizing-default">
+              <option selected>Select priority:</option>
+          </select>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-primary">Add ToDo</button>
+        </div>        
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="scripts/new_todo.js"></script>
   </body>
