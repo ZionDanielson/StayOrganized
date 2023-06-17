@@ -2,15 +2,9 @@
 
 //identify variables
 
-        //user dropdown
-        //category dropdown
-        //Urgency dropdown
-        //Inputbox for Todo Description
-        //Inputbox for todo deadline 
-
 const userDropdown = document.getElementById("userDropdown");
 const categoryDropdown = document.getElementById("categoryDropdown");
-const urgencyDropdown = document.getElementById("urgencyDropdown");
+const priorityDropdown = document.getElementById("priorityDropdown");
 const todoDescriptionInput = document.getElementById("todoDescriptionInput");
 const todoDeadlineInput = document.getElementById("todoDeadlineInput");
 
@@ -22,7 +16,7 @@ window.onload = function() {
 
         const userDropdown = document.getElementById("userDropdown");
         const categoryDropdown = document.getElementById("categoryDropdown");
-    //    const urgencyDropdown = document.getElementById("urgencyDropdown");
+        const priorityDropdown = document.getElementById("priorityDropdown");
     //    const todoDescriptionInput = document.getElementById("todoDescriptionInput");
       //  const todoDeadlineInput = document.getElementById("todoDeadlineInput");
 
@@ -32,6 +26,10 @@ window.onload = function() {
             
               categoryDropdown.addEventListener("change", function() {
                 console.log("Category Selected: ", categoryDropdown.value);
+              });
+
+              priorityDropdown.addEventListener("change", function() {
+                console.log("Priority Selected: ", priorityDropdown.value);
               });
             
 
@@ -57,6 +55,7 @@ function populateuserDropdown() {
 
 
 //populate category dropdown (fetch/loop through the todos.categories)
+
 function populatecategoryDropdown() {
   fetch("http://localhost:8083/api/categories")
     .then(response => response.json())
@@ -77,23 +76,17 @@ populatecategoryDropdown();
 
 
 
-//populate priority dropdown (fetch/loop through 
+//populate priority dropdown (hardcode the priorities)
 
+const priorityValues = ["Low", "Medium", "High"];
+const priorityDropdown = document.getElementById("priorityDropdown");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+priorityValues.forEach(option => {
+  const optionElement = document.createElement("option");
+  optionElement.value = option.toLowerCase();
+  optionElement.text = option;
+  priorityDropdown.appendChild(optionElement);
+});
 
 
 
