@@ -79,7 +79,6 @@ populatecategoryDropdown();
 //populate priority dropdown (hardcode the priorities)
 
 const priorityValues = ["Low", "Medium", "High"];
-const priorityDropdown = document.getElementById("priorityDropdown");
 
 priorityValues.forEach(option => {
   const optionElement = document.createElement("option");
@@ -89,4 +88,12 @@ priorityValues.forEach(option => {
 });
 
 
+// POST request to add TODO
 
+let bodydata = {
+  userid : userDropdown.value,
+  category : categoryDropdown.value,
+  description:todoDescriptionInput.value,
+  deadline: todoDeadlineInput.value,
+  priority: priorityDropdown.value,
+}
