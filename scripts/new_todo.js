@@ -82,7 +82,7 @@ populatecategoryDropdown();
 
 //populate priority dropdown (hardcode the priorities)
 
-const priorityValues = ["Low", "Medium", "High"];
+const priorityValues = ["Select Priority","Low", "Medium", "High"];
 
 priorityValues.forEach(option => {
   const optionElement = document.createElement("option");
@@ -125,7 +125,7 @@ function onAddTodoBtnClicked(){
  })
  .catch(err => {
   // If the POST returns an error, display a message
-  let message = "Error. Please make sure all fields are filled"
+  let message = "Error. Please make sure all fields are filled."
   alert(message)
   });
 }

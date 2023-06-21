@@ -2,14 +2,16 @@
 
 
 //identify variables
-let usersDropdown = document.getElementById("theUsersDropdown");
-let todoTableBody = document.getElementById("usersToDosInfoTable");
+const usersDropdown = document.getElementById("theUsersDropdown");
+const todoTableBody = document.getElementById("usersToDosInfoTable");
+const todoTable = document.getElementById("todoTable");
 
 //wireup onload functions 
 
 window.onload = () => {
     populateUsersDropdown();
     usersDropdown.onchange = onUsersDropdownChange;
+
 }
 
 
@@ -37,23 +39,23 @@ function onUsersDropdownChange() {
     let selectedUser = usersDropdown.value;
     console.log(selectedUser);
 
+
     fetch("http://localhost:8083/api/todos/byuser/" + selectedUser)
         .then((response) => response.json())
         .then(todos => displayAllTodos(todos))
-
+    
 }
-
 
 //function to display a task for specific user id
 function displayAllTodos(todos) {
 
 
 
- todoTableBody.innerHTML = "";
+    todoTableBody.innerHTML = "";
 
-   
-   
-    for (let todo of todos){
+
+
+    for (let todo of todos) {
         let row = todoTableBody.insertRow(-1);
 
         let cell1 = row.insertCell(0);
@@ -70,9 +72,13 @@ function displayAllTodos(todos) {
 
         let cell5 = row.insertCell(4);
         cell5.innerHTML = todo.completed;
-    
+
         let cell6 = row.insertCell(5);
         cell6.innerHTML = todo.description;
+    }
+
 }
 
+function hideTodoTable() {
+    todoTable.style.display = "none";
 }
